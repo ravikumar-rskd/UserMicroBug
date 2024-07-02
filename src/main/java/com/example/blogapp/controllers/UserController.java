@@ -1,5 +1,5 @@
 package com.example.blogapp.controllers;
-
+import org.springframework.http.ResponseEntity;
 import com.example.blogapp.models.User;
 import com.example.blogapp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
-        return ResponseEntity.ok(userRepository.getAllUsers());
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 
     @PutMapping("/{userId}")
